@@ -1,4 +1,9 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from .models import BoardMessage
 
 def index(request):
-    return HttpResponse('Тут буде список оголошень')
+    posts= BoardMessage.objects.all()
+    context={'posts':posts}
+    return render(request, 'board/index.html', context)
+

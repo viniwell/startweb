@@ -16,8 +16,8 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=50)),
-                ('content', models.aTextField(blank=True, null=True)),
-                ('price', models.FlotField(blank=True, null=True)),
+                ('content', models.TextField(blank=True, null=True)),
+                ('price', models.FloatField(blank=True, null=True)),
                 ('published', models.DateTimeField(auto_now_add=True, db_index=True)),
             ],
         ),
