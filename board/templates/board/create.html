@@ -1,0 +1,10 @@
+{% extends "layout/base.html" %}
+{% block title %}Додавання оголошення{% endblock title %}
+{% block content %}
+    <h1>Додавання оголошень</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Додати">
+    </form>
+    {% endblock content %}

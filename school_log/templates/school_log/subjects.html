@@ -1,0 +1,8 @@
+{% extends "layout/basic.html" %}
+{% block title %}Предмети{% endblock title %}
+
+{% block content %}
+{% for subject in subjects  %}
+{{subject.name}}
+{% endfor %}
+{% endblock content %}
