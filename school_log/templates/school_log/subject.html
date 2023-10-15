@@ -1,0 +1,8 @@
+{% extends "layout/basic.html" %}
+{% block title %}{{subject.name}}{% endblock title %}
+{% block content %}
+{% for task in tasks %}
+{{task.theme}}
+{{task.task[:10]}}
+{% endfor %}
+{% endblock content %}
