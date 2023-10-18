@@ -2,8 +2,13 @@
 {% block title %}Предмети{% endblock title %}
 
 {% block content %}
-<a href="{% url "create_new_subject" %}">Створити новий курс</a>
+
+    <a href="{% url "create_new_subject" %}">Створити новий курс</a>
 {% for subject in subjects  %}
+<div>
 <a href="{% url "subject" subject.id %}">{{subject.name}}</a>
+</div>
 {% endfor %}
+
+
 {% endblock content %}
