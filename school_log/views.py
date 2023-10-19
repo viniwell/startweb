@@ -50,5 +50,13 @@ def subject(request, subject_id):
     }
     return render(request, 'school_log/subject.html', context)
 
+def task(request, task_id):
+    task=Task_model.objects.get(id=task_id)
+    context={
+        'task':task,
+    }
+    return render(request, 'school_log/task.html', context)
+
+
 
 

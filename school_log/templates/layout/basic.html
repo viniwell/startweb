@@ -1,15 +1,18 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Головна{% endblock title %} <> School Log</title>
+    <link rel="stylesheet" href="{% static 'school_log/style_school_log.css' %}">
 </head>
 <body>
     
     <nav>
         <a href="{% url "index_school_log" %} " id=1>Головна сторінка</a>
-        <a href="{% url "subjects" %}" id=2>Предмети</a>
+        <a href="{% url "subjects" %}" id=2>Курси</a>
     </nav>
     {% block content %}
     {% endblock content %}

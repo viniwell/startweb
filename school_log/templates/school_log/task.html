@@ -1,0 +1,11 @@
+{% extends "layout/basic.html" %}
+{% block title %}Завдання {{task.subject.name}}{% endblock title %}
+{% block content %}
+<p>
+{{task.theme}}
+</p>
+<p>
+{{task.task}}
+</p>
+Термін здачі: {{task.term}}
+{% endblock content %}

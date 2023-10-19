@@ -8,7 +8,7 @@ class Task_model(models.Model):
     task=models.TextField(null=True, blank=True, verbose_name='Завдвння')
     term=models.DateTimeField(null=True, db_index=True, verbose_name='Термін здачі')
     published=models.DateTimeField(auto_now_add=True, verbose_name='Опубліковано')
-    subject=models.ForeignKey("Subject", null=True, verbose_name='Рубрика', on_delete=models.PROTECT)
+    subject=models.ForeignKey("Subject", null=True, verbose_name='Курс', on_delete=models.PROTECT)
 
     class Meta:
         verbose_name='Завдання'
@@ -18,6 +18,9 @@ class Task_model(models.Model):
 class Subject(models.Model):
     name=models.CharField(max_length=20, verbose_name='Предмет')
 
+    def __str__(self):
+        return self.name
     class Meta:
         verbose_name='Предмет'
         verbose_name_plural='Предмети'
+        ordering=['name']

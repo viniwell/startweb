@@ -1,9 +1,14 @@
 {% extends "layout/basic.html" %}
 {% block title %}{{subject.name}}{% endblock title %}
 {% block content %}
-<a href="{% url "create_new_task" subject.id %}">Створити нове завдання</a>
+<a href="{% url "create_new_task" %}">Створити нове завдання</a>
 {% for task in tasks %}
-{{task.theme}}
-{{task.task |slice:':10'}}
+<div>
+<a href="{% url "task" task.id %}"><div>{{task.theme}}</div>
+<div>{{task.task |slice:':10'}}...</div>
+{{task.term |date:"d.m.Y H:i:s" }}
+</a>
+</div>
+
 {% endfor %}
 {% endblock content %}

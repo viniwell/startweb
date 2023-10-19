@@ -11,5 +11,7 @@ class SubjectModelForm(ModelForm):
 class TaskModelForm(ModelForm):
     class Meta:
         model= Task_model
-        fields=('theme', 'task', 'term')
+        fields=('theme', 'task', 'term', 'subject')
+
+
 
